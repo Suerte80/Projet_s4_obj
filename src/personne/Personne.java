@@ -76,7 +76,7 @@ public class Personne
     /** Enumération PalierMaladie qui décrit le palier de la maladie. */
     protected PalierMaladie m_etatMalade;
     
-    /* Methodes */
+rea    /* Methodes */
     
     /** @return Nombre de Personne instancié. */
     public static final int nombrePersonne() { return m_nombrePersonne; }

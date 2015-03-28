@@ -7,7 +7,7 @@ package personne;
  * Type énumérer qui représente le palier de la maladie dans l'hote ( La personne )
  */
 
-enum PalierMaladie
+public enum PalierMaladie
 {
     nonMalade,
     incubation,

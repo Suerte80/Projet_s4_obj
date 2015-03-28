@@ -11,13 +11,13 @@ package entite;
 public class Entite
 {
     /* Attributs */
-    private static final int nombreEntite = 0; // Ici pour que les classes filles ne peuvent pas modifier la valeur de cet attribut.
+    private static int nombreEntite = 0; // Ici pour que les classes filles ne peuvent pas modifier la valeur de cet attribut.
 
     /** Attributs nom: Est le nom de l'entité. */
-    protected String nom;
+    protected String m_nom;
 
     /** Attributs description: Est la description de l'entitée. */
-    protected String description;
+    protected String m_description;
     
     /**
      * Constructeur par défaut.
@@ -25,8 +25,8 @@ public class Entite
     public Entite()
     /* Ce constructeur n'est qu'ici pour incrémenté le nombre d'instance de la classe Entite.  */
     {
-	nom = "Nom Vide";
-	description = "Description Vide";
+	m_nom = "Nom Vide";
+	m_description = "Description Vide";
 
 	nombreEntite++;
     }
@@ -35,11 +35,11 @@ public class Entite
      * @param Nom de l'entité.
      * @param Description de l'entité.
      */
-    public Entite( String n, String d )
+    public Entite( String nom, String description )
     /* Ce constructeur est ici pour initialisé les attributs. */
     {
-	nom = n;
-	description = d;
+	m_nom = nom;
+	m_description = description;
 
 	nombreEntite ++;
     }
@@ -55,33 +55,23 @@ public class Entite
     }
 
     /**
-     * @return Le nombre d'entité dans le programme.
-     */
-    public static int nombreEntite() { return nombreEntite; }
-
-    /**
      * @return String renvoyant le nom de l'entite.
      */
-    public String nom(){ return nom; }
+    public String nom(){ return m_nom; }
 
     /**
      * @param Nouveau nom de l'entite.
      */
-    public void nom( String n ) { nom = n; }
+    public void nom( String nom ) { m_nom = nom; }
     
     /**
      * @param Nouvelle description de l'entite.
      */
-    public void description( String d ) { description = d; }
-    
-    /**
-     * @return Retourne la description de l'entite.
-     */
-    public String description() { return description; }
+    public void description( String description ) { m_description = description; }
 
     /**
      * @return Retourne description de l'entite.
      */
-    public String toString() { return description; }
+    public String toString() { return m_description; }
 
 }
