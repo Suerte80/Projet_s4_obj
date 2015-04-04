@@ -21,6 +21,10 @@ public final class Quartier extends Entite
 
     /* Constructeur */
 
+    /**
+     * @param Un groupe de personne.
+     * @param Une classe sociale associé au quartier.
+     */
     public Quartier( PersonneGroupe population, ClasseSociale classe )
     {
 	m_population = population;
@@ -28,11 +32,25 @@ public final class Quartier extends Entite
 	m_classe = classe;
     }
 
+    /**
+     * @param Le nombre de personnes dans le quartier.
+     * @param La classe sociale associé au quartier.
+     */
     public Quartier( int nombrePersonne, ClasseSociale classe )
     {
-	
+	m_classe = classe;
+
+	m_population = new PersonneGroupe( nombrePersonne );	
     }
 
     /* Methodes */
+    
+    /**
+     * Permet de vacciner tous le monde.
+     */
+    public void vacciner ( )
+    {
+	
+    } 
 
 }

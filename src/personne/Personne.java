@@ -7,54 +7,10 @@ package personne;
  * Classe qui représente une personne.
  */
 
+import java.util.Random;
+
 public class Personne
 {
-
-    /* Constructeurs */
-    
-    /**
-     * Constructeur par défault.
-     */
-    public Personne()
-    {
-	m_aRisque = false;
-	m_pourcResVirus = 0.0f;
-	m_pourcResVaccin = 0.0f;
-	m_etatMalade = PalierMaladie.nonMalade;
-
-	m_nombrePersonne++;
-    }
-
-    /**
-     * @param Permet de savoir si la personne est une personne a risque ou pas.
-     * @param Pourcentage de résistance au Virus.
-     * @param Pourcentage de resistance au Vaccin.
-     */
-    public Personne( boolean aRisque, float pourcResVirus, float pourcResVaccin )
-    {
-	m_aRisque = aRisque;
-	m_pourcResVirus = pourcResVirus;
-	m_pourcResVaccin = pourcResVaccin;
-	m_etatMalade = PalierMaladie.nonMalade;
-
-	m_nombrePersonne++;
-    }
-    
-    /**
-     * @param Permet de savoir si la personne est une personne a risque ou pas.
-     * @param Pourcentage de résistance au Virus.
-     * @param Pourcentage de resistance au Vaccin.
-     * @param Détermine l'état du patient.
-     */
-    public Personne( boolean aRisque, float pourcResVirus, float pourcResVaccin, PalierMaladie etatMalade )
-    {
-	m_aRisque = aRisque;
-	m_pourcResVirus = pourcResVirus;
-	m_pourcResVaccin = pourcResVaccin;
-	m_etatMalade = etatMalade;
-	
-	m_nombrePersonne++;
-    }
 
     /* Attributs de classe */
 
@@ -70,13 +26,60 @@ public class Personne
     /** Pourcentage de résistance a la maladie. */
     protected float m_pourcResVirus;
 
-    /** Pourcentage de résistance au vaccin. */
-    protected float m_pourcResVaccin;
-
     /** Enumération PalierMaladie qui décrit le palier de la maladie. */
     protected PalierMaladie m_etatMalade;
+
+    /** Boolean qui permet de savoir si une personne est malade ou pas. */
+    protected boolean m_vacciner;
+
+    /* Constructeurs */
     
-rea    /* Methodes */
+    /**
+     * Constructeur par défault.
+     */
+    public Personne()
+    {
+	m_aRisque = false;
+	m_pourcResVirus = 0.0f;
+	m_etatMalade = PalierMaladie.nonMalade;
+
+	m_vacciner = false;
+
+	m_nombrePersonne++;
+    }
+
+    /**
+     * @param Permet de savoir si la personne est une personne a risque ou pas.
+     * @param Pourcentage de résistance au Virus.
+     */
+    public Personne( boolean aRisque, float pourcResVirus )
+    {
+	m_aRisque = aRisque;
+	m_pourcResVirus = pourcResVirus;
+	m_etatMalade = PalierMaladie.nonMalade;
+
+	m_vacciner = false;
+
+	m_nombrePersonne++;
+    }
+    
+    /**
+     * @param Permet de savoir si la personne est une personne a risque ou pas.
+     * @param Pourcentage de résistance au Virus.
+     * @param Détermine l'état du patient.
+     */
+    public Personne( boolean aRisque, float pourcResVirus, boolean vacciner, PalierMaladie etatMalade )
+    {
+	m_aRisque = aRisque;
+	m_pourcResVirus = pourcResVirus;
+	m_etatMalade = etatMalade;
+
+	m_vacciner = vacciner;
+	
+	m_nombrePersonne++;
+    }
+    
+    /* Methodes */
     
     /** @return Nombre de Personne instancié. */
     public static final int nombrePersonne() { return m_nombrePersonne; }
@@ -90,17 +93,23 @@ rea    /* Methodes */
     /** @return Pourcentage de la résistance au virus de la personne. */
     public float pourcResVirus() { return m_pourcResVirus; }
 
-    /** @return Pourcentage de la résistance au vaccin de la personne. */
-    public float pourcResVaccin() { return m_pourcResVaccin; }
-
     /** @return Retourne l'état du malade. */
     public PalierMaladie etatMalade() { return m_etatMalade; }
+
+    /** @return Retourne si une personne a été vacciner. */
+    public boolean vacciner() { return m_vacciner; }
+
+    /** Permet de vacciner une personne. */
+    public void administrationVaccin()
+    {
+	if( !m_vacciner )
+	    m_vacciner = true;
+    }
 
     /** @param Etat du malade. */
     public void etatMalade( PalierMaladie etatMalade ) { m_etatMalade = etatMalade; }
 
-
-    /** Fait évoluer l'état du malade vers l'état suivant */
+    /** Fait évoluer l'état du malade vers l'état suivant. */
     public void evolueEtat()
     {
 
@@ -113,6 +122,11 @@ rea    /* Methodes */
 	else
 	    m_etatMalade = PalierMaladie.mort;
 
+    }
+
+    public void deEvolueEtat()
+    {
+        m_etatMalade = PalierMaladie.nonMalade;
     }
 
 }
