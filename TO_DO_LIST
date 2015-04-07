@@ -1,0 +1,43 @@
+Liste des choses a faire:
+- Personne : FAIT
+- Personnel Médical : A FAIRE
+- Groupe Personne : FAIT
+- Ville : A FAIRE
+- Maladie : FAIT
+- Bacterie : A FAIRE
+- Virus : A FAIRE
+- Vaccin : A FAIRE
+
+NOTE:
+- Le taux de personnel médical dans la ville conditionne le taux de guérison dans la ville.
+- Comment vacciner une personne:
+  - Une personne prend le vaccin.
+    => Methode qui prend un Vaccin et une Maladie.
+
+A FINIR:
+- Documentation:
+  - ClassSocial.java
+  - Quartier.java
+  - Ville.java
+  - Réprésentation du personnel Médical dans Ville.
+  - Transfert de personne d'une ville a une autre.
+
+Description:
+- Personne:
+  - Une personne a:
+    - Une résistance a la maladie.
+    - Est vacciné ou pas.
+    - Comportement a risque.
+- Maladie:
+  - Une maladie a:
+    - Contagiosité.
+    - Létalité.
+    - Periode d'incubation.
+    - Période de contamination.
+- Ville:
+  - Une ville a:
+    - Un / Plusieurs groupe de personne.
+    - Un groupe de personnel médical.
+    - Methode pour ajouter du personnel médical.
+    - Methode pour bouger une personne.
+    - Methode pour lancer une campagne de vaccination.

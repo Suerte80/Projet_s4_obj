@@ -9,7 +9,10 @@ package ville;
  * Ici pour simplifier nous avons fait le choix de représenter qu'une classe social de personne par quartier.
  */
 
+import java.util.Random;
+
 import entite.Entite;
+import personne.Personne;
 import personne.PersonneGroupe;
 
 public final class Quartier extends Entite
@@ -21,18 +24,40 @@ public final class Quartier extends Entite
 
     /* Constructeur */
 
-    public Quartier( PersonneGroupe population, ClasseSociale classe )
+    public Quartier( String nom, String description, PersonneGroupe population, ClasseSociale classe )
     {
-	m_population = population;
+    	super( nom, description );
+    	
+    	m_population = population;
 
-	m_classe = classe;
+		m_classe = classe;
     }
 
-    public Quartier( int nombrePersonne, ClasseSociale classe )
+    public Quartier( String nom, String description, int nombrePersonne, ClasseSociale classe, float pourcResVirus, float pourcResVaccin )
     {
-	
+    	super( nom, description );
+    	
+    	Random rand = new Random();
+    	
+    	m_classe = classe;
+
+		m_population = new PersonneGroupe();
+		
+		for( int i = 0; i < nombrePersonne; i++ ){
+			m_population.ajoutPersonne( new Personne( rand.nextBoolean() , pourcResVirus, pourcResVaccin) );
+		}
     }
 
     /* Methodes */
+    
+    public boolean ajoutPersonne( boolean aRisque, float pourcResVirus, float pourcResVaccin )
+    {
+    	return m_population.ajoutPersonne( new Personne( aRisque, pourcResVirus, pourcResVaccin ) );
+    }
+    
+    public int totalPersonne()
+    {
+    	return m_population.tailleGroupe();
+    }
 
 }

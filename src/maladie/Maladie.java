@@ -15,25 +15,25 @@ public interface Maladie
     public float contagiosite();
     
     /** @param Pourcentage de contagiosité. */
-    protected void contagiosite( float pourcContaguisite );
+    public void contagiosite( float pourcContaguisite );
 
     /** @return Pourcentage de létalité. */
     public float letalite();
 
     /** @param Pourcentage de létalité. */
-    protected void letalite( float pourcLetalite );
+    public void letalite( float pourcLetalite );
 
     /** @return Le temps d'incubation en frames. */
     public int tempsIncubation();
 
     /** @param Le temps d'incubation en frames. */
-    protected void tempsIncubation( int tempsIncubation );
+    public void tempsIncubation( int tempsIncubation );
 
     /** @return Le temps de contamination en frames. */
     public int tempsContamination();
 
     /** @param Le temps de contamination en frames. */
-    protected void tempsContamination( int tpsIncub );
+    public void tempsContamination( int tpsIncub );
 
     /**
      * @return Si l'infection a réussis sur la personne.

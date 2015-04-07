@@ -7,6 +7,8 @@ package personne;
  * Classe qui représente une personne.
  */
 
+import maladie.Maladie;
+
 public class Personne
 {
 
@@ -75,8 +77,8 @@ public class Personne
 
     /** Enumération PalierMaladie qui décrit le palier de la maladie. */
     protected PalierMaladie m_etatMalade;
-    
-rea    /* Methodes */
+   
+    /* Methodes */
     
     /** @return Nombre de Personne instancié. */
     public static final int nombrePersonne() { return m_nombrePersonne; }
@@ -113,6 +115,12 @@ rea    /* Methodes */
 	else
 	    m_etatMalade = PalierMaladie.mort;
 
+    }
+
+    /** Vaccine la personne. */
+    public boolean vacciner( /*Vaccin vac,*/ Maladie maladie )
+    {
+	return true;
     }
 
 }

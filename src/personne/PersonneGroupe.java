@@ -5,9 +5,6 @@ package personne;
  */
 
 import java.util.LinkedList;
-import java.util.Iterator;
-
-import personne.Personne;
 
 
 public class PersonneGroupe
@@ -25,8 +22,8 @@ public class PersonneGroupe
     /** Constructeur par défaut. */
     public PersonneGroupe()
     {
-	m_tailleGroupe = 0;
-	m_liste = new LinkedList<Personne>();
+		m_tailleGroupe = 0;
+		m_liste = new LinkedList<Personne>();
     }
 
     /**
@@ -34,14 +31,14 @@ public class PersonneGroupe
      */
     public PersonneGroupe( int tailleGroupe )
     {
-	m_tailleGroupe = tailleGroupe;
+		m_tailleGroupe = tailleGroupe;
+		
+		m_liste = new LinkedList<Personne>();
 	
-	m_liste = new LinkedList<Personne>();
-
-	for( int i = 0; i < m_tailleGroupe; i++ ){
-	    if( ! m_liste.add( new Personne() ) )
-		return;
-	}
+		for( int i = 0; i < m_tailleGroupe; i++ ){
+		    if( ! m_liste.add( new Personne() ) )
+			return;
+		}
     }
 
     /**
@@ -109,14 +106,6 @@ public class PersonneGroupe
     }
 
     /**
-     * @return La taille du groupe.
-     */
-    public int taille()
-    {
-	return m_tailleGroupe;
-    }
-
-    /**
      * Methode qui ajoute un personnage au groupe.
      * @param Un instance de la classe Personne.
      */
@@ -134,10 +123,18 @@ public class PersonneGroupe
 
     protected void suppressionListe()
     {
-	for( int i = 0; i < m_tailleGroupe; i++ )
-	    m_liste.removeFirst();
+    	for( int i = 0; i < m_tailleGroupe; i++ )
+	    	m_liste.removeFirst();
 
-	m_tailleGroupe = 0;
+		m_tailleGroupe = 0;
+    }
+    
+    /**
+     * Méthode qui retourne le nombre de personne dans le groupe.
+     */
+    public int tailleGroupe()
+    {
+    	return m_tailleGroupe;
     }
 
     /**
