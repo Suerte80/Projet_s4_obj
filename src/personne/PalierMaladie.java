@@ -12,5 +12,5 @@ public enum PalierMaladie
     nonMalade,
     incubation,
     contamination,
-    mort
+    mort;
 }

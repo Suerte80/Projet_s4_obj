@@ -143,4 +143,13 @@ public class PersonneGroupe
      */
     public void evolutionPersonnage( int rang ) { (m_liste.get( rang )).evolueEtat(); }
 
+    /**
+     * Methode qui permet de vacciner le groupe.
+     */
+    public void vacciner()
+    {
+	for( int i = 0; i < m_liste.size(); i++ )
+	    m_liste.get(i).vacciner();
+    }
+
 }

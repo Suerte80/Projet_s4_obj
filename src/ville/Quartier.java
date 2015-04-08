@@ -24,7 +24,15 @@ public final class Quartier extends Entite
 
     /* Constructeur */
 
+<<<<<<< HEAD
     public Quartier( String nom, String description, PersonneGroupe population, ClasseSociale classe )
+=======
+    /**
+     * @param Un groupe de personne.
+     * @param Une classe sociale associé au quartier.
+     */
+    public Quartier( PersonneGroupe population, ClasseSociale classe )
+>>>>>>> 4c5716c4e971ac54a5e58178dbc81d6a1c3365b9
     {
     	super( nom, description );
     	
@@ -33,6 +41,7 @@ public final class Quartier extends Entite
 		m_classe = classe;
     }
 
+<<<<<<< HEAD
     public Quartier( String nom, String description, int nombrePersonne, ClasseSociale classe, float pourcResVirus, float pourcResVaccin )
     {
     	super( nom, description );
@@ -46,10 +55,22 @@ public final class Quartier extends Entite
 		for( int i = 0; i < nombrePersonne; i++ ){
 			m_population.ajoutPersonne( new Personne( rand.nextBoolean() , pourcResVirus, pourcResVaccin) );
 		}
+=======
+    /**
+     * @param Le nombre de personnes dans le quartier.
+     * @param La classe sociale associé au quartier.
+     */
+    public Quartier( int nombrePersonne, ClasseSociale classe )
+    {
+	m_classe = classe;
+
+	m_population = new PersonneGroupe( nombrePersonne );	
+>>>>>>> 4c5716c4e971ac54a5e58178dbc81d6a1c3365b9
     }
 
     /* Methodes */
     
+<<<<<<< HEAD
     public boolean ajoutPersonne( boolean aRisque, float pourcResVirus, float pourcResVaccin )
     {
     	return m_population.ajoutPersonne( new Personne( aRisque, pourcResVirus, pourcResVaccin ) );
@@ -59,5 +80,14 @@ public final class Quartier extends Entite
     {
     	return m_population.tailleGroupe();
     }
+=======
+    /**
+     * Permet de vacciner tous le monde.
+     */
+    public void vacciner ( )
+    {
+	
+    } 
+>>>>>>> 4c5716c4e971ac54a5e58178dbc81d6a1c3365b9
 
 }

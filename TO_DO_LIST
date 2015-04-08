@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Liste des choses a faire:
 - Personne : FAIT
 - Personnel Médical : A FAIRE
@@ -41,3 +42,21 @@ Description:
     - Methode pour ajouter du personnel médical.
     - Methode pour bouger une personne.
     - Methode pour lancer une campagne de vaccination.
+=======
+A FAIRE:
+
+FINIR GROUPE POPULATION -> ------ ->
+VACCIN -> 31/03/15 ->
+MALADIE ( VIRUS, BACTERIE.... )
+PERSONNEL MEDICAL
+
+NOTES:
+	- Taux de guérison de la maladie est du en fonction du nombre du personnel medical.
+
+
+\!/ C'est le vaccin qui soigne une personne ou alors la personne qui se soigne?
+
+    - Le vaccin qui soigne la personne.
+    - Comment faire?
+      - En faisant des methodes qui soigne une personne.
+>>>>>>> 4c5716c4e971ac54a5e58178dbc81d6a1c3365b9

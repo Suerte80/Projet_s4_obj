@@ -1,11 +1,23 @@
+<<<<<<< HEAD
 package ville;
 
 /**
  * Représente une ville.
+=======
+package Ville;
+
+/**
+ * @author Courtin Alexis
+ * @date 30/03/15
+ * @version 0.0.1
+ *
+ * Cette classe permet de modeliser une ville.
+>>>>>>> 4c5716c4e971ac54a5e58178dbc81d6a1c3365b9
  */
 
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 public class Ville
 {
     /* Attributs */
@@ -61,4 +73,23 @@ public class Ville
     	return true;
     }
     
+=======
+public Ville extends Entite
+{
+    /* Attributs */
+    protected ArrayList<Quartier> m_quartiers;
+    protected int m_totalPopulation;
+
+    /* Constructeurs */
+    
+    public Ville( ArrayList<Quartier> quartier )
+    {
+	 
+    }
+
+    /* Methodes public */
+
+    /* Methodes privées */
+
+>>>>>>> 4c5716c4e971ac54a5e58178dbc81d6a1c3365b9
 }
